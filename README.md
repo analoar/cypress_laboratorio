@@ -32,6 +32,8 @@ Before you begin, ensure you have the following installed on your machine:
     ```bash
     npm install
     npm install -D cypress-axe axe-core
+    npm install @faker-js/faker --save-dev
+    npm install dayjs
     ```
 
 ***
@@ -89,7 +91,7 @@ This mode is best for running the full test suite in a CI/CD pipeline or for reg
 npx cypress run
 
 # Run tests from a specific file
-npx cypress run --spec "cypress/e2e/Checkout.cy.js"
+npx cypress run --spec "cypress/e2e/checkout.cy.js"
 
 # Run tests on a specific browser
 npx cypress run --browser chrome
@@ -100,7 +102,7 @@ The project uses cypress-image-diff for visual regression testing. The workflow 
 
 1. Run the test file 
 ```bash
-npx cypress run --spec "cypress/e2e/Cvisual-testing-cypress.cy.js"
+npx cypress run --spec "cypress/e2e/visual-testing-cypress.cy.js"
 ``` 
 
 2. Generate the Report

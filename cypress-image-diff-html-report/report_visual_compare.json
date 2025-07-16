@@ -1,13 +1,75 @@
 {
-  "total": 0,
-  "totalPassed": 0,
-  "totalFailed": 0,
-  "totalSuites": 0,
-  "suites": [],
-  "startedAt": "2025-07-16T00:26:39.371Z",
-  "endedAt": "2025-07-16T00:28:15.199Z",
-  "duration": 95828,
-  "browserName": "electron",
-  "browserVersion": "118.0.5993.159",
+  "total": 5,
+  "totalPassed": 1,
+  "totalFailed": 4,
+  "totalSuites": 1,
+  "suites": [
+    {
+      "name": "visual-testing-cypress.cy.js",
+      "path": "cypress/e2e/visual-testing-cypress.cy.js",
+      "tests": [
+        {
+          "status": "fail",
+          "name": "chrome/visual-testing-cypress.cy-inicio",
+          "percentage": 0.5885338804313661,
+          "failureThreshold": 0.1,
+          "specPath": "cypress/e2e/visual-testing-cypress.cy.js",
+          "specFilename": "visual-testing-cypress.cy.js",
+          "baselinePath": "cypress-visual-screenshots/baseline/chrome/visual-testing-cypress.cy-inicio.png",
+          "diffPath": "cypress-visual-screenshots/diff/chrome/visual-testing-cypress.cy-inicio.png",
+          "comparisonPath": "cypress-visual-screenshots/comparison/chrome/visual-testing-cypress.cy-inicio.png"
+        },
+        {
+          "status": "pass",
+          "name": "chrome/visual-testing-cypress.cy-login",
+          "percentage": 0.02946278254943948,
+          "failureThreshold": 0.1,
+          "specPath": "cypress/e2e/visual-testing-cypress.cy.js",
+          "specFilename": "visual-testing-cypress.cy.js",
+          "baselinePath": "cypress-visual-screenshots/baseline/chrome/visual-testing-cypress.cy-login.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-visual-screenshots/comparison/chrome/visual-testing-cypress.cy-login.png"
+        },
+        {
+          "status": "fail",
+          "name": "chrome/visual-testing-cypress.cy-registro",
+          "percentage": 0.18642668693349004,
+          "failureThreshold": 0.1,
+          "specPath": "cypress/e2e/visual-testing-cypress.cy.js",
+          "specFilename": "visual-testing-cypress.cy.js",
+          "baselinePath": "cypress-visual-screenshots/baseline/chrome/visual-testing-cypress.cy-registro.png",
+          "diffPath": "cypress-visual-screenshots/diff/chrome/visual-testing-cypress.cy-registro.png",
+          "comparisonPath": "cypress-visual-screenshots/comparison/chrome/visual-testing-cypress.cy-registro.png"
+        },
+        {
+          "status": "fail",
+          "name": "chrome/visual-testing-cypress.cy-checkout",
+          "percentage": 0.17812541670966203,
+          "failureThreshold": 0.1,
+          "specPath": "cypress/e2e/visual-testing-cypress.cy.js",
+          "specFilename": "visual-testing-cypress.cy.js",
+          "baselinePath": "cypress-visual-screenshots/baseline/chrome/visual-testing-cypress.cy-checkout.png",
+          "diffPath": "cypress-visual-screenshots/diff/chrome/visual-testing-cypress.cy-checkout.png",
+          "comparisonPath": "cypress-visual-screenshots/comparison/chrome/visual-testing-cypress.cy-checkout.png"
+        },
+        {
+          "status": "fail",
+          "name": "chrome/visual-testing-cypress.cy-Cart",
+          "percentage": 0.2725538150354361,
+          "failureThreshold": 0.1,
+          "specPath": "cypress/e2e/visual-testing-cypress.cy.js",
+          "specFilename": "visual-testing-cypress.cy.js",
+          "baselinePath": "cypress-visual-screenshots/baseline/chrome/visual-testing-cypress.cy-Cart.png",
+          "diffPath": "cypress-visual-screenshots/diff/chrome/visual-testing-cypress.cy-Cart.png",
+          "comparisonPath": "cypress-visual-screenshots/comparison/chrome/visual-testing-cypress.cy-Cart.png"
+        }
+      ]
+    }
+  ],
+  "startedAt": "2025-07-16T23:16:59.891Z",
+  "endedAt": "2025-07-16T23:22:33.721Z",
+  "duration": 306488,
+  "browserName": "chrome",
+  "browserVersion": "138.0.7204.102",
   "cypressVersion": "13.17.0"
 }

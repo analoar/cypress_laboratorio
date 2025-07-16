@@ -12,6 +12,9 @@
     "invalidMail": "Email inválido",
     "differentPassword": "Las contraseñas no coinciden",
     "emptyCart": "No tienes elementos en el carrito",
+    "modalOrderTitle": "Orden creada",
+    "modalOrderDescription":"Tu orden se ha creado con éxito, podrás ver tu historial en tu cuenta",
+    "orderValue": "$10,150.00",
     "user1Data": [
         {
             "email": "huge.test@gmail.com",

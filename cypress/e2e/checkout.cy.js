@@ -14,13 +14,13 @@ beforeEach(() => {
 });
 
 describe('Checkout validation Scenarios', () => {
-it.skip('Adding things to car | Check cart counter', function () {
+it('Adding things to car | Check cart counter', function () {
     cy.get(homeElements.BANDAS).click(),
     cy.get(homeElements.CARTCOUNTER).contains('1'),
     cy.get(homeElements.BANCA).click(),
     cy.get(homeElements.CARTCOUNTER).contains('2')
   });
-  it.skip('Cart drawer details', function () {
+  it('Cart drawer details', function () {
     cy.fillCart(),
     cy.get(homeElements.CART).click(),
     cy.get(homeElements.CARTMODAL).should('be.visible'),
@@ -28,26 +28,34 @@ it.skip('Adding things to car | Check cart counter', function () {
     cy.get(homeElements.CARTCLEAR).should('be.visible') //the rest is tested with the visual compare
   });
   
-  it.skip('Clear Cart', function () {
+  it('Clear Cart', function () {
     cy.fillCart(),
     cy.get(homeElements.CART).click(),
     cy.get(homeElements.CARTCLEAR).click(),
     cy.checkEmptyCart()
-    cy.window().its('localStorage').should('have.length', 0)
   });
   
-  it.skip('Delete elements from Cart', function () {
+  it('Delete elements from Cart', function () {
     cy.fillCart(),
     cy.get(homeElements.CART).click(),
     cy.get(homeElements.CARTMODAL).should('be.visible'),
     cy.get(homeElements.CARTCLEAR).click()
   });
   
-  it('Checkout to buy', function () {
+  it('Checkout to buy | Full transaction', function () {
     cy.fillCart(),
     cy.get(homeElements.CART).click(),
-    cy.get(homeElements.CARTMODAL).should('be.visible'),
-    cy.get(homeElements.GOCHECKOUT).click(),
-    cy.get(checkoutElements.TITLE).contains('Checkout')
+    cy.get(homeElements.GOCHECKOUT).click().click(),
+    cy.wait(2000),
+    cy.get(checkoutElements.TITLE).contains('Checkout'),
+    cy.fillPaymentInfo(),
+    cy.get(checkoutElements.PAY).click()
+    cy.checkModalContent(registerData.modalOrderTitle,registerData.modalOrderDescription)
+  });
+  
+  it('Order creation | Mi cuenta', function () {
+    cy.visit('/my-account'),
+    cy.checkDate(),
+    cy.get(checkoutElements.ORDERVALUE).contains(registerData.orderValue)
   });
 });
