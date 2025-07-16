@@ -1,23 +1,42 @@
 {
-    "name": "testuser",
-    "personalData": [
+    "errorModal": "No pudimos iniciar sesión con estas credenciales. Intenta de nuevo.",
+    "errorTitleModal": "Error",
+    "titlePasswordModal": "Token enviado",
+    "passwordModal": "Revisa tu correo para recuperar tu contraseña",
+    "titleRegistrationModal": "Operación Exitosa",
+    "registrationModal": "Tu usuario ha sido creado correctamente. Sigue las indicaciones de tu instructor para poder activar tu cuenta.",
+    "titleRegistrationErrorModal": "Error",
+    "registrationErrorModal": "Este email ya está registrado",
+    "registrationMandatoryMessage": "Este campo es requerido",
+    "minCharactersPassword": "La contraseña debe tener al menos 8 caracteres",
+    "invalidMail": "Email inválido",
+    "differentPassword": "Las contraseñas no coinciden",
+    "emptyCart": "No tienes elementos en el carrito",
+    "user1Data": [
         {
-            "password": "HugeTest",
-            "day": "11",
-            "month": "August",
-            "year": "1995",
-            "mobile": "3122456789"
+            "email": "huge.test@gmail.com",
+            "password": "Huge2025.",
+            "creditCard": "4301822375925071",
+            "expiration": "2029-09",
+            "CVV": "668"
+        },
+        {
+            "email": "huge2.test@gmail.com",
+            "password": "Monday12.",
+            "creditCard": "5840254353870254",
+            "expiration": "2028-11",
+            "CVV": "637"
         }
     ],
-    "shippingInformation": [
+        "userRegData": [
         {
-            "name": "Jhon",
-            "lastName": "Due",
-            "address": "Calle 95 # 5-6",
-            "country": "United States",
-            "state": "California",
-            "city": "Los Angeles",
-            "zipCode": "11001"
+            "email": "ana.test",
+            "domain": "@yopmail.com",
+            "name": "Ana Test ",
+            "password": "t3stPassword*",
+            "creditCard": "5840254353870254",
+            "expiration": "2028-11",
+            "CVV": "637"
         }
     ]
 }

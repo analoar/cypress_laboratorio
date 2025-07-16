@@ -8,3 +8,4 @@ npm_install_debug.log
 build_results.txt
 usage.log
 results/
+/cypress-visual-screenshots

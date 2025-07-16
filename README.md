@@ -1,99 +1,117 @@
-# Cypress Base Project 
+# [Automation Challenge] - E2E Test Automation by Ana Londoño
 
->This project aims to implement a general guideline and structure easy to follow for all Hugers
+This repository contains the end-to-end (E2E), visual, and accessibility automated tests for the **Laboratorio de Testing** application, written using Cypress.
 
+Credit for the foundational concepts of this project goes to the **Raptor Team** at Huge. The codebase has since been substantially changed and tailored for this particular implementation.
 
-## Prerequisites
+The automation strategy is available [here](https://docs.google.com/document/d/1xpzE6id7MyBNJ2YTJzyqXZsoXabxQS7yQM85XbTY4R4/edit?tab=t.0#heading=h.5fs1wfkcds7l)
 
-You need to have previously installed the following tools
+***
 
-[![java](https://img.shields.io/badge/java-v8-yellow.svg)](https://www.oracle.com/java/technologies/downloads/#java8)
-[![java](https://img.shields.io/badge/nodejs-v14X-red.svg)](https://nodejs.org/en/download)
+## Requirements
 
+Before you begin, ensure you have the following installed on your machine:
+* **Node.js** (v18 or higher is recommended)
+* **npm** (comes bundled with Node.js)
 
->## Table of Contents  
- - [HugeBaseProject]  
-  - [Table of Contents](#Table-of-Contents)  
-   - [Requirements](#Requirements)  
-   - [The project directory structure](#The-project-directory-structure)  
-   - [Inputs](#Inputs)  
-   - [Outputs](#Outputs)  
-   - [Installation](#Installation)  
-   - [Example usage](#Example-usage)  
-   - [ used technology stack  ](#Further-Reading--Useful-Links)  
+***
 
-## Requirements  
-| Name      | Version |  
-| --------- | ------- | 
-| java | > = 8.x |  
-| node | > = 14.x |
-
-## The project directory structure
-​
-The project is compiled for Node Package Manager and follows the standard directory structure used in most Cypress projects implementing custom commands, DRY and KISS patterns:
-```Gherkin
-src
-  + cypress                               | Location of automation source files                               
-    + e2e                                 | Contains all the tests 
-    + fixtures                            | .json files to store all isolated data required to execute the tests 
-    + support                             | Contains elements, commands and  
-        + commands                        | Custom commands that simulate the user interactions                      
-        + elements                        | Defined constants that include the DOM locators
-        + utilities.js                    | Common functions 
-        + e2e.js                          | Class to import all created commands
-+ cypress.config.js                       | Global Cyopress configuration. The most important variable here is the baseUrl
-+ package.json                            | Node package manager
-    
-```
-
-## Inputs  
-| Name | Description | Values |  
-| ------------------ | -------------------------- |  -------------------------- |  
-| none |N/A | N/A |
-## Outputs  
-| Name               | Description                |  
-| ------------------ | -------------------------- |  
-| Allure reports   |   native and descriptive reports on the final state of the tests, the test results will be recorded in the allure-report directory open the index.html file
 ## Installation
-​We use [NPM](https://nodejs.org/en), a cross-platform build automation tool that help with our full development flow. ​
 
-* `git@github.hugeinc.com:stetovar/base_cypress_framework.git` this repository
-* change into the new directory `cd base_cypress_framework`.
-* you can import the project in Visual Studio, like [this](https://learn.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo?view=vs-2022)
+1.  **Clone the repository** to your local machine:
+    ```bash
+    git clone https://github.com/analoar/cypress_laboratorio.git
+    ```
 
-### Dependencies Installation
+2.  **Navigate to the project directory**:
+    ```bash
+    cd [your-project-directory]
+    ```
 
-npm install
+3.  **Install the dependencies** listed in `package.json`:
+    ```bash
+    npm install
+    npm install -D cypress-axe axe-core
+    ```
 
-### Allure Reports Installation
+***
 
-npm install -g allure-commandline --save-dev
-
-
-## Example usage  
-```bash  
- npx cypress run --env allure=true
- allure generate --clean
- allure open
+## Project structure
 ```
-Note: Only for LDAP, open the report url in Firefox.
-## Outputs  
+├── cypress/
+│   ├── e2e/                          # Contains all test (.cy.js) files, organized by feature
+│   │   ├── register.cy.js
+│   │   ├── login.cy.js
+│   │   ├── checkout.cy.js
+│   │   ├── visual-testing-cypress.cy.js
+│   │   ├── a11-axe.cy.js
+│   │   └── orders.cy.js
+│   ├── fixtures/                     # Stores static data (e.g., user.json) used in tests
+│   │   ├── data.json
+│   └── support/                      # Holds reusable code and configurations
+│       ├── commands/                 # Custom Cypress commands for user interactions related to one of the flows
+│           ├──  checkout-commands.js
+│           ├──  login-commands.js
+│           └──  register-commands.js
+│       ├── elements/                 # Stores constants for DOM locators
+│           ├──  checkout-elements.js
+│           ├──  home-elements.js
+│           ├──  register-elements.js
+│           ├──  login-elements.js
+│           └──  orders-elements.js
+│       ├── utilities.js              # Common helper functions
+│       └── e2e.js                    # Imports commands to make them globally available
+├── cypress-image-diff-html-report    # JSON file that is created visual comparison tests
+├── cypress-visual-screenshots        # Screenshots for baseline, comparison, and the differences per browser used
+│   ├── baseline               
+│   ├── comparison
+│   └── diff
+├── cypress.config.js                  # Global Cypress configuration file (baseUrl, timeouts, etc.)
+└── package.json                       # Manages project dependencies and scripts
+```
+## Running Tests
 
-the scenarios used during automation were the following
+You can run the Cypress tests in two modes: interactive (with the Test Runner) or headless (via the command line).
 
-| Name               | Description                |  
-| ------------------ | -------------------------- |  
-| register.cy.js   |  Validation of the creation of a user  |
-|
-## used technology stack  
-* [MarkDown guide](https://www.markdownguide.org/getting-started/)  
-* [DRY, KISS Patterns](https://vpodk.medium.com/principles-of-software-engineering-6b702faf74a6)  
-* [JDK (Java Development Kit)](https://www.oracle.com/java/technologies/javase-downloads.html)  
-* [SonarQube](https://www.sonarqube.org/) 
-* [BDD (Behavior-Driven Development)](http://www.thucydides.info/#/)
-* [Allure Reports](https://github.com/Shelex/cypress-allure-plugin)
+### Interactive Mode
 
->Authors:  
->  Raptor Team :t-rex:
->  That's it, We hope you like it
->  
+This mode is ideal for developing and debugging tests, as it opens the Cypress Test Runner UI.
+
+```bash
+npx cypress open
+```
+
+### Headless Mode
+
+This mode is best for running the full test suite in a CI/CD pipeline or for regression runs. It runs the tests in the background without opening a browser window.
+```bash
+# Run all tests
+npx cypress run
+
+# Run tests from a specific file
+npx cypress run --spec "cypress/e2e/Checkout.cy.js"
+
+# Run tests on a specific browser
+npx cypress run --browser chrome
+```
+
+### Visual Comparison Testing 📸
+The project uses cypress-image-diff for visual regression testing. The workflow involves running the tests and then generating an HTML report to see the differences.
+
+1. Run the test file 
+```bash
+npx cypress run --spec "cypress/e2e/Cvisual-testing-cypress.cy.js"
+``` 
+
+2. Generate the Report
+Run the following command to generate the comparison report
+```bash
+npx cypress-image-diff-html-report generate
+``` 
+
+3. View the Report
+To start a local server and view the HTML report in your browser, run:
+```bash
+npx cypress-image-diff-html-report start
+````
+

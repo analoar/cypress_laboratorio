@@ -1,9 +1,6 @@
 import utils from '../utilities';
 import uiRegister from '../elements/register-elements';
 import uiHome from '../elements/home-elements';
-import { faker } from '@faker-js/faker';
-
-
 
 Cypress.Commands.add('typeDataSingUp', (name) => {
     utils.getByCssSelector(uiRegister.NAME).type(name);

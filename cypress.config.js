@@ -5,7 +5,11 @@ const getCompareSnapshotPlugin = require('cypress-image-diff-js/plugin');
 module.exports = defineConfig({
   chromeWebSecurity: false,
   e2e: {
-    baseUrl: 'https://automationexercise.com/',
+    //baseUrl: 'https://automationexercise.com/',
+    baseUrl: 'https://www.laboratoriodetesting.com/',
+    viewportWidth: 1280,
+    viewportHeight: 720,
+    pageLoadTimeout: 100000, 
     setupNodeEvents(on, config) {
       allureWriter(on, config);
       return getCompareSnapshotPlugin(on, config);

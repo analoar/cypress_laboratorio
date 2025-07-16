@@ -1,7 +1,8 @@
-///<reference types="Cypress"/>
 import '../support/commands/login-commands';
 import '../support/commands/register-commands';
-import '@percy/cypress'
+import '@percy/cypress';
+import 'cypress-axe';
+
 
 // import '@shelex/cypress-allure-plugin';
 const  compareSnapshotCommand = require('cypress-image-diff-js/command');
